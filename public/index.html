@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONITORAMENTO DE REDES</title>
+    <style>
+body {
+    background-color: #1e1e1e; /* Fundo escuro */
+    color: #e0e0e0; /* Texto claro */
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid #555555; /* Borda mais clara */
+    padding: 8px;
+}
+
+th {
+    background-color: #333333; /* Cabeçalho da tabela escuro */
+    color: #ffffff; /* Texto do cabeçalho claro */
+    text-align: center;
+}
+
+.offline {
+    background-color: #a94442; /* Fundo offline escuro */
+    color: #ffffff; /* Texto offline claro */
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.online {
+    background-color: #3c763d; /* Fundo online escuro */
+    color: #ffffff; /* Texto online claro */
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <h1>MONITORAMENTO DE REDES</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>IP</th>
+                <th>STATUS</th>
+                <th>TEMPO DE RESPOSTA (MS)</th>
+            </tr>
+        </thead>
+        <tbody id="servidores">
+        </tbody>
+    </table>
+    <script>
+        async function fetchStatus() {
+            const response = await fetch('/status');
+            const servidores = await response.json();
+
+            const tbody = document.getElementById('servidores');
+            tbody.innerHTML = '';
+
+            servidores.forEach(servidor => {
+                const tr = document.createElement('tr');
+                tr.className = servidor.online ? 'online' : 'offline';
+
+                const tdNome = document.createElement('td');
+                tdNome.textContent = servidor.nome;
+                tr.appendChild(tdNome);
+
+                const tdIp = document.createElement('td');
+                tdIp.textContent = servidor.ip;
+                tr.appendChild(tdIp);
+
+                const tdStatus = document.createElement('td');
+                tdStatus.textContent = servidor.online ? 'Online' : 'Offline';
+                tr.appendChild(tdStatus);
+
+                const tdTempoResposta = document.createElement('td');
+                tdTempoResposta.textContent = servidor.tempoResposta;
+                tr.appendChild(tdTempoResposta);
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        setInterval(fetchStatus, 5000); // Atualiza a cada 3 segundos
+        fetchStatus();
+    </script>
+</body>
+</html>

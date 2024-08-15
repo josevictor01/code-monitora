@@ -1,0 +1,33 @@
+ //servidores
+    { nome: 'PORTAL', ip: 'portal.ucdb.br' },
+    { nome: 'SERV-SUP', ip: '10.0.2.17' },
+    { nome: 'SERV-PRINT', ip: 'serv-print' },
+    { nome: 'SERV-ADM-NEW', ip: '10.0.0.5' },
+    { nome: 'SERV-ADM-BKP', ip: '10.0.0.6' },
+    { nome: 'OCS SERVER DTI', ip: '192.168.30.126' },
+    { nome: 'PBX SERV', ip: 'pbx.ucdb.br' }
+//BLOCO ADM
+    { nome: 'DTI', ip: '192.168.30.1' },
+    { nome: 'BLOCO ADM', ip: '192.168.48.1' },
+    { nome: 'BLOCO ADM 2', ip: '192.168.49.1' },
+    { nome: 'REDE EAD', ip: '192.168.47.1' },
+//BLOCOS
+    { nome: 'BLOCO A', ip: '192.168.31.1' },
+    { nome: 'BLOCO B', ip: '192.168.32.1' },
+    { nome: 'BLOCO C', ip: '192.168.36.1' },
+    { nome: 'BLOCO D', ip: '192.168.42.1' },
+//DIVERSOS
+    { nome: 'LABCOM', ip: '192.168.38.1' },
+    { nome: 'CLINICAS', ip: '192.168.33.1' },
+    { nome: 'BIOSAUDE', ip: '192.168.34.1' },
+    { nome: 'HVET', ip: '192.168.35.1' },
+    { nome: 'PATIO UCDB', ip: '192.168.51.1' },
+    { nome: 'MESTRADO', ip: '192.168.55.1' },
+    { nome: 'BIBLIOTECA', ip: '192.168.37.1' },
+    { nome: 'PORTARIA', ip: '192.168.39.1' },
+    { nome: 'REDE EVENTOS', ip: '192.168.43.1' },
+//FAZENDA
+    { nome: 'CETE-AGRO', ip: '192.168.46.1' },
+    { nome: 'FAZ. ESCOLA - CASA UCDB', ip: '192.168.44.1' },
+    { nome: 'FAZ. ESCOLA - SÃO VICENTE IV', ip: '192.168.45.1' },
+    { nome: 'REDE CASA RETIRO', ip: '192.168.50.1' }
